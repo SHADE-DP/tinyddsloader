@@ -365,7 +365,7 @@ private:
 public:
     void* GetDDSData() noexcept
     {
-        auto data = m_dds.data()
+        auto data = m_dds.data();
         data += sizeof(uint32_t) + sizeof(Header);
         return static_cast<void*>(data);
     }
