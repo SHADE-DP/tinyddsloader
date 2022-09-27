@@ -361,6 +361,14 @@ private:
     DXGIFormat m_format;
     bool m_isCubemap;
     TextureDimension m_texDim;
+
+public:
+    void* GetDDSData() noexcept
+    {
+        auto data = m_dds.data()
+        data += sizeof(uint32_t) + sizeof(Header);
+        return static_cast<void*>(data);
+    }
 };
 
 }  // namespace tinyddsloader
